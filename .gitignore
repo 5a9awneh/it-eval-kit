@@ -1,0 +1,24 @@
+# Source data — never committed (place your exports here locally)
+Evidence/*
+
+# Allow the sample data and the Evidence readme/gitkeep
+!Evidence/sample/
+!Evidence/sample/**
+!Evidence/README.md
+!Evidence/.gitkeep
+
+# User-provided reference files — stay local only
+Reference/*
+!Reference/README.md
+
+# Generated output — regenerated on each run
+Tools/ticket_stats.txt
+
+# Binary / temp files
+*.docx
+*.bak
+*.tmp
+
+# Python bytecode
+__pycache__/
+*.pyc

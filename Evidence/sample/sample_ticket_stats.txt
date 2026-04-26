@@ -1,0 +1,85 @@
+============================================================
+  SERVICE DESK TICKET STATISTICS
+  Generated: 2026-04-26 18:36
+============================================================
+
+── OVERVIEW ─────────────────────────────────────────────
+  Total tickets:          30
+  Date range:             06 Jan 2026  →  20 Feb 2026
+  Tenure months:          2
+  Unique requesters:      30
+  New system deployments: 4  (subject-keyword, resolved only)
+  OS reformat operations: 1  (subject-keyword, resolved only)
+
+── STATUS BREAKDOWN ─────────────────────────────────────
+  Resolved/Closed:        28  (93.3%)
+  Cancelled:              1  (3.3%)
+  Other/Open:             1  (3.3%)
+  Resolution rate:        93.3%  (Resolved / Total)
+
+── RESPONSE / RESOLUTION TIMES ──────────────────────────
+  Resolved tickets timed: 28
+  Median resolution time: 0.8 hours  (45 min)
+  Average resolution:     2.5 hours
+  Same-day (≤24h):        28  (100.0% of Resolved)
+
+── VOLUME PATTERNS ──────────────────────────────────────
+  Monthly average:        15 tickets/month
+  Peak month:             2026-01  (15 tickets)
+  Peak quarter:           Q1 2026  (30 tickets)
+  Peak day-of-week:       Tuesday  (6 tickets)
+  Peak hour:              08:00  (8 tickets)
+
+── MONTHLY BREAKDOWN ────────────────────────────────────
+  2026-01    15  ███
+  2026-02    15  ███
+
+── QUARTERLY BREAKDOWN ──────────────────────────────────
+  Q1 2026       30
+
+── CATEGORY BREAKDOWN ───────────────────────────────────
+  (Derived from subject-keyword analysis — CSV category field not used)
+  Software/App                  6  (20.0%)
+  Account/Access                6  (20.0%)
+  Setup/Config                  4  (13.3%)
+  Network/Connectivity          3  (10.0%)
+  Printer/Scanner               3  (10.0%)
+  Hardware                      2  (6.7%)
+  Email/Outlook                 2  (6.7%)
+  Formatting/OS                 2  (6.7%)
+  Security                      2  (6.7%)
+
+── DAY-OF-WEEK DISTRIBUTION ─────────────────────────────
+  Monday           5
+  Tuesday          6
+  Wednesday        6
+  Thursday         6
+  Friday           6
+  Saturday         1
+  Sunday           0
+
+── HOURLY DISTRIBUTION ──────────────────────────────────
+  00:00     0  
+  01:00     0  
+  02:00     0  
+  03:00     0  
+  04:00     0  
+  05:00     0  
+  06:00     0  
+  07:00     2  
+  08:00     8  
+  09:00     8  
+  10:00     6  
+  11:00     3  
+  12:00     0  
+  13:00     1  
+  14:00     2  
+  15:00     0  
+  16:00     0  
+  17:00     0  
+  18:00     0  
+  19:00     0  
+  20:00     0  
+  21:00     0  
+  22:00     0  
+  23:00     0  
