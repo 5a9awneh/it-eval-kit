@@ -15,7 +15,7 @@ Update `Reports/Performance Review.md` — the formal performance appraisal docu
 
 - `Reports/Performance Analysis.md` — KPIs and notable projects
 - `Reports/Achievements & Contributions.md` — specific achievements and contributions
-- `Tools/ticket_stats.txt` — raw numbers
+- `Tools/ticket_stats.txt` — raw numbers *(optional — if absent, omit quantitative metrics sections and insert: "No ticket data available for this reporting period.")*
 - `Reference/performance-review-template.txt` — **your org's appraisal form** (read this first to understand the required sections, fields, and any character limits)
 - `Reference/sample-completed-review.md` *(if present)* — use as a tone, style, and format reference
 

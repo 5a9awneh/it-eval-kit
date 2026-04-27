@@ -15,7 +15,7 @@ Generate or update `Reports/Annual Report.md` — the annual performance and con
 
 ## Source Material
 
-- `Tools/ticket_stats.txt` — all quantitative data
+- `Tools/ticket_stats.txt` — all quantitative data *(optional — if absent, omit quantitative metrics sections and insert: "No ticket data available for this reporting period.")*
 - `Reports/Performance Analysis.md` — KPIs, category breakdown, notable projects
 - `Reports/Achievements & Contributions.md` — innovations, projects, certifications
 - `Reports/Performance Review.md` — ratings and supervisor assessment (for supervisor section)

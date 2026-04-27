@@ -8,6 +8,7 @@ Usage:
 Options:
   --config PATH   Path to config.json  (default: Tools/config.json)
   --verbose       Print each ticket's classified category to stdout
+  --validate      Show per-ticket classification and unmatched tickets; does not write ticket_stats.txt
   --help          Show this message
 
 Column mapping, date format, categories, and all other settings are
@@ -42,6 +43,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--verbose",
         action="store_true",
         help="Print each ticket's classified category to stdout.",
+    )
+    p.add_argument(
+        "--validate",
+        action="store_true",
+        help=(
+            "Show per-ticket classification and unmatched tickets. "
+            "Does not write ticket_stats.txt. "
+            "Use when tuning config.json categories."
+        ),
     )
     return p
 
@@ -232,7 +242,7 @@ def main():
     for r in rows:
         cat = classify(r[col_subject], compiled_cats)
         ticket_categories.append(cat)
-        if args.verbose:
+        if args.verbose and not args.validate:
             line = f"  [{cat}] {r[col_subject][:80]}"
             print(
                 line.encode(sys.stdout.encoding, errors="replace").decode(
@@ -241,6 +251,61 @@ def main():
             )
     category_counts = Counter(ticket_categories)
     category_sorted = category_counts.most_common()
+
+    # ── Validate mode ─────────────────────────────────────────────────────
+    if args.validate:
+        print("\n── CLASSIFICATION RESULTS ──────────────────────────────")
+        print("  (validate mode — no output file will be written)\n")
+        other_tickets = []
+        for r, cat in zip(rows, ticket_categories):
+            subject = r[col_subject][:80]
+            flag = "  ← UNMATCHED" if cat == "Other" else ""
+            line = f"  [{cat:<25}] {subject}{flag}"
+            try:
+                print(
+                    line.encode(sys.stdout.encoding, errors="replace").decode(
+                        sys.stdout.encoding
+                    )
+                )
+            except Exception:
+                print(line)
+            if cat == "Other":
+                other_tickets.append(r[col_subject])
+
+        print("\n── CATEGORY SUMMARY ─────────────────────────────────────")
+        for cat, cnt in category_sorted:
+            pct = cnt / total * 100
+            flag = "  ← review" if cat == "Other" else ""
+            print(f"  {cat:<25}  {cnt:4d}  ({pct:.1f}%){flag}")
+
+        print(
+            f"\n── UNMATCHED TICKETS ({len(other_tickets)}) ──────────────────────────────"
+        )
+        if other_tickets:
+            for subj in other_tickets:
+                line = f"  \u2022 {subj[:100]}"
+                try:
+                    print(
+                        line.encode(sys.stdout.encoding, errors="replace").decode(
+                            sys.stdout.encoding
+                        )
+                    )
+                except Exception:
+                    print(line)
+        else:
+            print("  None \u2014 all tickets matched a category.")
+
+        print(
+            f"\n\u2713 Validation complete: {len(other_tickets)} unmatched out of {total} tickets."
+        )
+        if other_tickets:
+            print(
+                "  Add keyword patterns to 'categories' in config.json to fix unmatched tickets."
+            )
+        print(
+            "  No output file written. Remove --validate when ready to generate ticket_stats.txt."
+        )
+        return
 
     # ── Deployments & reformats ───────────────────────────────────────────
     def _matches(subject, patterns):

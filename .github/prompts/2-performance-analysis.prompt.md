@@ -13,6 +13,8 @@ Update `Reports/Performance Analysis.md` to reflect the latest data.
 
 ## Steps
 
+> **No ticket data?** If `Tools/ticket_stats.txt` does not exist, skip all ticket-derived metrics sections and insert the placeholder: *"No ticket data available for this reporting period."* Continue to update the projects table from `Evidence/email-evidence/projects-initiatives/` — all narrative sections remain fully populated.
+
 1. **Read `Tools/ticket_stats.txt`** — extract all current metrics
 
 2. **Audit `Evidence/email-evidence/projects-initiatives/`** for threads added since the previous reporting period end date. Identify any new projects or initiatives not yet reflected in the document.

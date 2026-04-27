@@ -25,9 +25,13 @@ A new ticket export CSV has been placed in `Evidence/tickets/`. Run the analysis
    ```
    python Tools/analyze_tickets.py Evidence/tickets/<filename>.csv
    ```
-   Or with debug output:
+   Or with per-ticket classification output:
    ```
    python Tools/analyze_tickets.py Evidence/tickets/<filename>.csv --verbose
+   ```
+   To tune categories without writing output (useful before the first full run):
+   ```
+   python Tools/analyze_tickets.py Evidence/tickets/<filename>.csv --validate
    ```
 
 4. **Review `Tools/ticket_stats.txt`** — confirm the output looks correct:

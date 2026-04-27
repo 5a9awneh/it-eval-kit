@@ -5,7 +5,7 @@ description: "Prompt 3 — Achievements & Contributions: Update Reports/Achievem
 
 # Prompt 3 — Achievements & Contributions
 
-Read `.github/copilot-instructions.md` for project context. Ensure `Tools/ticket_stats.txt` is up to date.
+Read `.github/copilot-instructions.md` for project context. Ensure `Tools/ticket_stats.txt` is up to date if available.
 
 ## Task
 
@@ -13,7 +13,7 @@ Update `Reports/Achievements & Contributions.md` — a comprehensive career refe
 
 ## Steps
 
-1. **Read `Tools/ticket_stats.txt`** — extract all current metrics
+1. **Read `Tools/ticket_stats.txt`** — extract all current metrics. If this file does not exist, skip the metrics table and note it as unavailable; proceed with email evidence only — all project and achievement sections remain fully populated.
 
 2. **Audit new evidence** — read email threads in:
    - `Evidence/email-evidence/projects-initiatives/` — project and initiative updates
